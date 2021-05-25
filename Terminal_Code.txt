@@ -1,0 +1,140 @@
+muhaa@muhaa-VirtualBox:~$ ls
+Desktop    Downloads  Pictures  snap       Videos
+Documents  Music      Public    Templates  web_dev
+muhaa@muhaa-VirtualBox:~$ cd web_dev
+muhaa@muhaa-VirtualBox:~/web_dev$ ls
+'Git Cheatsheet.png'   Git_Test
+muhaa@muhaa-VirtualBox:~/web_dev$ cd Git_Test
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test$ git@github.com:MuhammadAA/git_test.git
+bash: git@github.com:MuhammadAA/git_test.git: No such file or directory
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test$ git clone git@github.com:MuhammadAA/git_test.git
+Cloning into 'git_test'...
+warning: You appear to have cloned an empty repository.
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test$ ls
+git_test
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test$ cd git_test
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git remote -v
+origin	git@github.com:MuhammadAA/git_test.git (fetch)
+origin	git@github.com:MuhammadAA/git_test.git (push)
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ ls
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ touch README.md
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git add README.md
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   README.md
+
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git commit -m "Add README.md"
+[main (root-commit) 3d82bb4] Add README.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git log
+commit 3d82bb4e8f90712111d8f8ce7e2fd091e6723b1b (HEAD -> main)
+Author: MuhammadAA <Muhammad23.2003@gmail.com>
+Date:   Mon May 24 23:20:11 2021 -0400
+
+    Add README.md
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ pwd
+/home/muhaa/web_dev/Git_Test/git_test
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ touch hello_world.txt
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	hello_world.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ code README.md
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git add README.md
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git add .
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+	new file:   hello_world.txt
+
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git commit -m "Add hello_world.txt and edit README.md."
+[main 6ab051e] Add hello_world.txt and edit README.md.
+ 2 files changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git log 
+commit 6ab051e1aceb66fe8f69927fe6989030a2ff3170 (HEAD -> main)
+Author: MuhammadAA <Muhammad23.2003@gmail.com>
+Date:   Mon May 24 23:26:52 2021 -0400
+
+    Add hello_world.txt and edit README.md.
+
+commit 3d82bb4e8f90712111d8f8ce7e2fd091e6723b1b
+Author: MuhammadAA <Muhammad23.2003@gmail.com>
+Date:   Mon May 24 23:20:11 2021 -0400
+
+    Add README.md
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git push origin main
+Warning: Permanently added the RSA host key for IP address '140.82.114.3' to the list of known hosts.
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 536 bytes | 536.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:MuhammadAA/git_test.git
+ * [new branch]      main -> main
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git statys
+git: 'statys' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+muhaa@muhaa-VirtualBox:~/web_dev/Git_Test/git_test$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
